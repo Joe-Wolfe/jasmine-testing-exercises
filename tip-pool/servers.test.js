@@ -21,8 +21,10 @@ describe("Servers test (with setup and tear-down)", function() {
   it('should create new tds with updateServerTable()', function(){
     //
     submitServerInfo();
+    updateServerTable();
 
     let newEntry = document.querySelectorAll("#server1 td");
+    
     expect(newEntry[0].textContent).toBe("Alice");
     expect(newEntry[1].textContent).toBe("$0.00");
 
@@ -36,6 +38,6 @@ describe("Servers test (with setup and tear-down)", function() {
     serverId = 0;
 
     //reset UI
-    updateServerTable();
+    serverTbody.innerHTML = "";
   });
 });
